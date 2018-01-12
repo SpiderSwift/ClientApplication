@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.control.ClientFormController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="480.0" prefWidth="230.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <content>
+            <ListView fx:id="list" onKeyReleased="#changeMessageField" onMouseClicked="#changeMessageField" prefHeight="470.0" prefWidth="188.0" />
+         </content>
+      </ScrollPane>
+      <SplitPane dividerPositions="0.6733668341708543" layoutX="231.0" orientation="VERTICAL" prefHeight="480.0" prefWidth="409.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="380.0">
+               <children>
+                  <TextArea fx:id="dialogWindow" editable="false" layoutX="73.0" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextArea fx:id="messageField" prefHeight="114.0" prefWidth="440.0" wrapText="true" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TextArea>
+                  <Button fx:id="sendButton" layoutX="311.0" layoutY="114.0" mnemonicParsing="false" onMouseReleased="#sendMessage" prefHeight="31.0" prefWidth="89.0" text="Send" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                  <Button fx:id="callButton" layoutX="237.0" layoutY="116.0" mnemonicParsing="false" onMouseReleased="#callUser" prefHeight="31.0" prefWidth="82.0" text="Call" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="100.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
